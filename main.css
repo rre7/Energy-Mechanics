@@ -1,63 +1,70 @@
 /* ベース設定 */
+/* 全体の基本スタイル */
 body {
   font-family: "Hiragino Kaku Gothic ProN", sans-serif;
-  line-height: 1.6;
   margin: 0;
   padding: 0;
+  background-color: #f7fafc;
   color: #333;
-  background-color: #f5f5f5;
+  line-height: 1.8;
 }
 
+/* ヘッダー */
 header {
-  background-color: #2c7be5;
+  background-color: #0077b6;
   color: white;
-  padding: 1rem;
+  padding: 1.5rem 1rem;
   text-align: center;
 }
 
-h1, h2 {
-  margin-top: 0;
-}
-
-nav .nav-links {
+/* ナビゲーション */
+.nav-links {
   display: flex;
   justify-content: center;
   list-style: none;
   padding: 0;
+  margin-top: 1rem;
 }
 
-nav .nav-links li {
-  margin: 0 1em;
+.nav-links li {
+  margin: 0 1rem;
 }
 
-nav .nav-links a {
+.nav-links a {
   color: white;
   text-decoration: none;
   font-weight: bold;
 }
 
+/* メインセクション */
 main {
   padding: 2rem;
 }
 
-img.responsive-image {
-  max-width: 100%;
-  height: auto;
-  margin: 1rem 0;
-  border-radius: 8px;
+h2 {
+  color: #0077b6;
 }
 
+img.responsive-image {
+  width: 100%;
+  max-width: 600px;
+  height: auto;
+  margin: 1rem 0;
+  border-radius: 10px;
+}
+
+/* フッター */
 footer {
-  background-color: #2c7be5;
+  background-color: #0077b6;
   color: white;
   text-align: center;
   padding: 1rem 0;
   margin-top: 2rem;
 }
 
-/* レスポンシブ対応 */
+/* スマホ対応 */
 @media (max-width: 600px) {
-  nav .nav-links {
+  .nav-links {
     flex-direction: column;
     align-items: center;
   }
@@ -66,3 +73,4 @@ footer {
     padding: 1rem;
   }
 }
+
