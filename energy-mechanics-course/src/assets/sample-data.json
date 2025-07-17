@@ -1,0 +1,54 @@
+{
+  "courses": [
+    {
+      "id": 1,
+      "title": "Introduction to Energy",
+      "description": "An overview of energy concepts, types, and sources.",
+      "duration": "4 weeks",
+      "modules": [
+        {
+          "moduleId": 1,
+          "moduleTitle": "Understanding Energy",
+          "moduleDescription": "Learn about the fundamental concepts of energy."
+        },
+        {
+          "moduleId": 2,
+          "moduleTitle": "Types of Energy",
+          "moduleDescription": "Explore different types of energy including kinetic, potential, and thermal energy."
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "title": "Mechanics Fundamentals",
+      "description": "A comprehensive course on the principles of mechanics.",
+      "duration": "6 weeks",
+      "modules": [
+        {
+          "moduleId": 1,
+          "moduleTitle": "Newton's Laws of Motion",
+          "moduleDescription": "Study the three laws of motion and their applications."
+        },
+        {
+          "moduleId": 2,
+          "moduleTitle": "Forces and Motion",
+          "moduleDescription": "Understand the relationship between forces and motion."
+        }
+      ]
+    }
+  ],
+  "instructors": [
+    {
+      "id": 1,
+      "name": "Dr. John Smith",
+      "expertise": "Energy Systems",
+      "contact": "john.smith@example.com"
+    },
+    {
+      "id": 2,
+      "name": "Prof. Jane Doe",
+      "expertise": "Mechanical Engineering",
+      "contact": "jane.doe@example.com"
+    }
+  ]
+}
