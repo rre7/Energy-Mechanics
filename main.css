@@ -526,6 +526,8 @@ footer {
     box-shadow: 0 4px 16px rgba(255, 183, 77, 0.18);
     border: 1.5px solid #ffd180;
     background: #fff8f1;
+    aspect-ratio: 1 / 1; /* 正方形を維持 */
+    transition: all 0.3s ease;
 }
 
 /* 矢印デザイン */
@@ -600,7 +602,7 @@ html {
     height: auto;
     min-width: 150px; /* 最小サイズを設定 */
 }
-/* 画像セクションの基本スタイル */
+
 /* 画像セクションの基本スタイル - 修正版 */
 .course-images, .course1-images {
     display: flex;
