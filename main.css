@@ -516,8 +516,8 @@ footer {
     margin: 2rem 0;
 }
 .course-images img {
-    width: 220px;
-    height: 140px;
+    width: 180px;
+    height: 180px;
     object-fit: cover;
     border-radius: 12px;
     box-shadow: 0 4px 16px rgba(255, 183, 77, 0.18);
@@ -624,7 +624,8 @@ html {
     flex-wrap: nowrap;
     padding: 0 1rem;
     width: 100%;
-    overflow: hidden; /* はみ出しを防ぐ */
+    overflow: hidden; 
+    /* はみ出しを防ぐ */
 }
 
 /* 基本的な画像サイズ（レスポンシブ） - 修正版 */
@@ -642,7 +643,7 @@ html {
     background: #fff8f1;
     flex-shrink: 1;
     transition: all 0.3s ease;
-    aspect-ratio: 1 / 1; 
+    aspect-ratio: 1/1; 
 }
 
 /* 細かい調整用のメディアクエリ */
