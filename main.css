@@ -739,21 +739,26 @@ html {
         gap: 1rem;
     }
 
-    .course-images, .course1-images {
+  .course-images, .course1-images {
+        display: flex;
         flex-direction: row; /* 横並びを維持 */
-        flex-wrap: wrap; /* 必要に応じて折り返し */
+        flex-wrap: nowrap; /* 折り返しなし */
         justify-content: center;
-        gap: 0.8rem;
+        align-items: center;
+        gap: 1rem;
+        margin: 2rem 0;
     }
 
-     .course-images img, .course1-images img {
-        width: calc(33% - 0.5rem); /* 3枚を均等に配置 */
-        min-width: 90px; /* 最小幅を確保 */
-        max-width: 150px;
+
+      .course-images img, .course1-images img {
+        width: calc(33.333% - 0.7rem); /* 3枚を均等に配置 */
+        min-width: 100px; /* 最小幅を確保 */
+        max-width: 180px;
         height: auto;
         aspect-ratio: 3/3; /* 縦横比を固定 */
         object-fit: cover;
-
+        flex-shrink: 1; /* 必要に応じて縮小 */
+    }
     .contact-info {
         grid-template-columns: 1fr;
         gap: 1.5rem;
@@ -763,7 +768,7 @@ html {
         padding: 1.2rem;
         font-size: 1.1rem;
     }
-}}
+}
 
 /* スマートフォン */
 @media (max-width: 480px) {
@@ -906,3 +911,23 @@ html {
         font-size: 1.4rem;
     }
 } 
+/* URL・長いテキストの改行対応 */
+a, .url-text, .long-text {
+    word-wrap: break-word;
+    word-break: break-all;
+    overflow-wrap: break-word;
+    hyphens: auto;
+}
+
+/* 特にお問い合わせセクションでのURL */
+.contact-item a, .contact-item p {
+    word-wrap: break-word;
+    word-break: break-all;
+    overflow-wrap: break-word;
+}
+
+/* テーブルやコンテナ内での文字列 */
+table, .text-container {
+    table-layout: fixed;
+    word-wrap: break-word;
+}
