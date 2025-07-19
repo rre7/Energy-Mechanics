@@ -17,9 +17,9 @@ body {
 
 /* ヘッダー */
 header {
-    background: #ff7043;
+    background: #f86e33;
     color: #fff;
-    padding: 0.5rem 1rem 0.3rem 1rem; /* 縦のpaddingをさらに小さく */
+    padding: 2rem 1rem 1.2rem 1rem; /* 縦のpaddingをさらに小さく */
     text-align: center;
     position: fixed;
     top: 0;
@@ -72,15 +72,17 @@ header h1 {
 .nav-links a {
     color: #fff;
     text-shadow: 0 1px 2px rgba(180, 80, 0, 0.15);
-    font-weight: 700;
+    font-weight: 600;
     font-size: 1rem;
     padding: 0.8rem 1.5rem;
     border-radius: 30px;
     transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     position: relative;
-    background: rgba(255, 183, 77, 0.18); /* 薄いオレンジ系単色 */
+    background: rgba(253, 198, 114, 0.559); /* 薄いオレンジ系単色 */
     border: none;
     box-shadow: none;
+    font-family: "Mochiy Pop One", sans-serif;
+    font-style: normal;
 }
 
 /* グラデーションや枠を付与している疑似要素を無効化 */
@@ -202,14 +204,15 @@ section::before {
 }
 
 h2 {
-    color: #e65100;
-    font-size: 2.2rem;
+    color: #ff7043;
+    font-size: 2rem;
     margin-bottom: 2rem;
-    font-weight: 800;
+    font-weight: 700;
     text-align: center;
     position: relative;
     padding-bottom: 1rem;
     text-shadow: 0 1px 2px #fff, 0 0 1px #ffd180;
+
 }
 
 h2::after {
@@ -237,14 +240,14 @@ ul {
     margin: 2rem 0;
 }
 
-ul li {
+ul .li5 {
     background: linear-gradient(135deg, #ff7043 0%, #ffd180 100%);
     color: #fff;
     padding: 1.5rem;
     margin: 1.5rem 0;
     border-radius: 15px;
     font-size: 1.2rem;
-    font-weight: 700;
+    font-weight: 600;
     position: relative;
     overflow: hidden;
     transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
@@ -252,7 +255,7 @@ ul li {
     box-shadow: 0 8px 25px rgba(255, 112, 67, 0.2);
 }
 
-ul li::before {
+ul .li5::before {
     position: absolute;
     left: -40px;
     top: 50%;
@@ -261,16 +264,16 @@ ul li::before {
     transition: all 0.3s ease;
 }
 
-ul li:hover {
+ul .li5:hover {
     transform: translateX(15px) scale(1.02);
     box-shadow: 0 15px 40px rgba(255, 112, 67, 0.3);
 }
 
-ul li:hover::before {
+ul .li5:hover::before {
     left: 15px;
 }
 
-ul li::after {
+ul .li5::after {
     content: '';
     position: absolute;
     top: 0;
@@ -281,7 +284,7 @@ ul li::after {
     transition: left 0.5s;
 }
 
-ul li:hover::after {
+ul .li5:hover::after {
     left: 100%;
 }
 
@@ -299,13 +302,14 @@ ul li + p {
 
 /* お問い合わせセクション */
 #contact {
-    background: linear-gradient(135deg, #ff7043 0%, #ffd180 100%);
+    background: linear-gradient(135deg, #ffae43 0%, #fd9a6f 100%);
     color: white;
     text-align: center;
 }
 
 #contact h2 {
     color: white;
+    font-weight: 500;
 }
 
 #contact h2::after {
@@ -337,12 +341,13 @@ ul li + p {
 
 .contact-item h3 {
     font-size: 1.4rem;
+    color: white;
     margin-bottom: 1rem;
-    color: #ffd180;
+   
 }
 
 .contact-item p {
-    color: white;
+     color: #f8f1e5;
     margin-bottom: 0.5rem;
 }
 
@@ -475,6 +480,9 @@ footer {
     align-items: center;
     gap: 0.5em;
     font-weight: bold;
+    font-family: "Kosugi Maru", sans-serif;
+  font-weight: 400;
+  font-style: normal;
 }
 
 .course-card p {
@@ -505,6 +513,7 @@ footer {
 .course-images {
     display: flex;
     justify-content: center;
+    align-items: center;
     gap: 1.5rem;
     margin: 2rem 0;
 }
@@ -517,4 +526,327 @@ footer {
     border: 1.5px solid #ffd180;
     background: #fff8f1;
 }
+
+/* 矢印デザイン */
+.course-arrow {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #ff7043;
+    margin: 0 0.5rem;
+    vertical-align: middle;
+    user-select: none;
+}
+
+/* 6の写真だけ中央に配置 */
+.course1-images {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    margin: 2rem 0;
+}
+.course1-images img {
+    width: 180px;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 14px;
+    box-shadow: 0 4px 16px rgba(255, 183, 77, 0.18);
+    border: 1.5px solid #ffd180;
+    background: #fff8f1;
+}
+
+/* よくある質問セクションのデザイン */
+#faq {
+    background: #fff8f1;
+    border-radius: 18px;
+    box-shadow: 0 4px 16px rgba(255, 183, 77, 0.10);
+    padding: 2.5rem 1.5rem;
+    margin: 3rem 0; /* 左右のautoを0に変更 */
+    max-width: 1200px; /* 身につくこと（mainセクション）と同じ幅に */
+}
+
+#faq h2 {
+    color: #ff7043;
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    font-weight: 700;
+    text-align: center;
+    position: relative;
+    padding-bottom: 1rem;
+    text-shadow: 0 1px 2px #fff, 0 0 1px #ffd180;
+    
+}
+
+.faq-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.faq-item {
+    background: #fff3e0;
+    border-radius: 12px;
+    border: 1px solid #ffd180;
+    box-shadow: 0 2px 8px rgba(255, 183, 77, 0.08);
+    padding: 1.2rem 1rem;
+}
+
+.faq-item h3 {
+    font-size: 1.1rem;
+    color: #ff7043;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+}
+
+.faq-item p {
+    font-size: 1rem;
+    color: #3e2723;
+    margin: 0;
+}
+
 /* --- 追加・修正ここまで --- */
+
+html {
+    scroll-padding-top: 210px; /* ヘッダーの高さ分だけ余白を確保 */
+}
+/* 画像のレスポンシブ対応を追加 */
+.course-images img, .course1-images img {
+    max-width: 100%;
+    height: auto;
+    min-width: 150px; /* 最小サイズを設定 */
+}
+
+/* 既存のメディアクエリに加えて、段階的な対応を追加 */
+
+/* 大画面（デスクトップ） */
+@media (min-width: 1400px) {
+    main {
+        max-width: 1400px;
+    }
+    
+    section {
+        padding: 4rem;
+    }
+    
+    #hero h2 {
+        font-size: 3.5rem;
+    }
+}
+
+/* 中画面（ノートPC・小さいデスクトップ） */
+@media (max-width: 1200px) {
+    main {
+        padding: 1.5rem;
+    }
+    
+    section {
+        padding: 2.5rem;
+    }
+}
+
+/* タブレット（横向き） */
+@media (max-width: 1024px) {
+    header h1 {
+        font-size: 1.6rem;
+    }
+    
+    #hero h2 {
+        font-size: 2.6rem;
+    }
+    
+    .course-grid {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 1.2rem;
+    }
+    
+    .course-images {
+        flex-direction: column;
+        gap: 1rem;
+    }
+    
+    .course1-images {
+        flex-wrap: wrap;
+        gap: 1rem;
+    }
+    
+    .contact-info {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    }
+}
+
+/* タブレット（縦向き） */
+@media (max-width: 768px) {
+    body {
+        padding-top: 140px; /* ナビが縦並びになるため増やす */
+    }
+
+    header {
+        padding: 1.5rem 1rem;
+    }
+
+    header h1 {
+        font-size: 1.5rem;
+    }
+
+    .nav-links {
+        flex-direction: column;
+        align-items: center;
+        gap: 0.8rem;
+    }
+
+    .nav-links a {
+        padding: 0.6rem 1.2rem;
+        font-size: 0.9rem;
+        width: 100%;
+        max-width: 200px;
+        text-align: center;
+    }
+
+    #hero {
+        padding: 3rem 1rem 2.5rem;
+    }
+
+    #hero h2 {
+        font-size: 2.2rem;
+    }
+
+    #hero p {
+        font-size: 1.2rem;
+    }
+
+    main {
+        padding: 1rem;
+    }
+
+    section, #faq {
+        padding: 2rem 1.5rem;
+        margin: 2rem 0;
+    }
+
+    h2 {
+        font-size: 1.8rem;
+    }
+
+    .course-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+
+    .course-images, .course1-images {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .course-images img, .course1-images img {
+        width: 100%;
+        max-width: 280px;
+        height: auto;
+    }
+
+    .contact-info {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    
+    ul .li5 {
+        padding: 1.2rem;
+        font-size: 1.1rem;
+    }
+}
+
+/* スマートフォン */
+@media (max-width: 480px) {
+    body {
+        padding-top: 160px;
+    }
+    
+    header {
+        padding: 1rem 0.5rem;
+    }
+    
+    header h1 {
+        font-size: 1.3rem;
+    }
+    
+    .sub-title {
+        font-size: 0.9rem;
+    }
+    
+    #hero {
+        padding: 2.5rem 1rem 2rem;
+    }
+    
+    #hero h2 {
+        font-size: 1.8rem;
+    }
+    
+    #hero p {
+        font-size: 1.1rem;
+    }
+    
+    main {
+        padding: 0.5rem;
+    }
+    
+    section, #faq {
+        padding: 1.5rem 1rem;
+        margin: 1.5rem 0;
+        border-radius: 15px;
+    }
+    
+    h2 {
+        font-size: 1.6rem;
+    }
+    
+    .course-card {
+        padding: 1rem 0.8rem;
+        min-height: 120px;
+    }
+    
+    .course-card h3 {
+        font-size: 1rem;
+    }
+    
+    .course-card p {
+        font-size: 0.9rem;
+    }
+    
+    .course-images img, .course1-images img {
+        max-width: 100%;
+        width: 100%;
+    }
+    
+    ul .li5 {
+        padding: 1rem;
+        font-size: 1rem;
+        margin: 1rem 0;
+    }
+    
+    .contact-item {
+        padding: 1.5rem;
+    }
+}
+
+/* 小さいスマートフォン */
+@media (max-width: 360px) {
+    header h1 {
+        font-size: 1.2rem;
+    }
+    
+    .nav-links a {
+        padding: 0.5rem 1rem;
+        font-size: 0.85rem;
+    }
+    
+    #hero h2 {
+        font-size: 1.6rem;
+    }
+    
+    section, #faq {
+        padding: 1.2rem 0.8rem;
+    }
+    
+    h2 {
+        font-size: 1.4rem;
+    }
+}
