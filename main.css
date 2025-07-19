@@ -642,6 +642,7 @@ html {
     background: #fff8f1;
     flex-shrink: 1;
     transition: all 0.3s ease;
+    aspect-ratio: 1 / 1; 
 }
 
 /* 細かい調整用のメディアクエリ */
@@ -671,6 +672,7 @@ html {
         max-height: 120px;
         min-width: 80px;
         min-height: 80px;
+        aspect-ratio: 1 / 1; 
     }
 }
 
@@ -690,6 +692,7 @@ html {
         min-width: 70px;
         min-height: 70px;
         border-radius: 8px;
+        aspect-ratio: 1 / 1; 
     }
     
     /* 矢印サイズも調整 */
@@ -714,6 +717,7 @@ html {
         min-width: 60px;
         min-height: 60px;
         border-radius: 6px;
+        aspect-ratio: 1 / 1; 
     }
     
     .course-arrow {
@@ -737,6 +741,7 @@ html {
         min-width: 55px;
         min-height: 55px;
         border-radius: 5px;
+        aspect-ratio: 1 / 1;
     }
     
     .course-arrow {
