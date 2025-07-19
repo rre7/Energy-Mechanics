@@ -739,16 +739,7 @@ html {
         gap: 1rem;
     }
 
-  .course-images, .course1-images {
-        display: flex;
-        flex-direction: row; /* 横並びを維持 */
-        flex-wrap: nowrap; /* 折り返しなし */
-        justify-content: center;
-        align-items: center;
-        gap: 1rem;
-        margin: 2rem 0;
-    }
-
+  
 
       .course-images img, .course1-images img {
         width: calc(33.333% - 0.7rem); /* 3枚を均等に配置 */
