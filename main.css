@@ -309,12 +309,10 @@ ul li + p {
 
 #contact h2 {
     color: white;
-    font-weight: 500;
+    font-weight: 400;
 }
 
-#contact h2::after {
-    background: linear-gradient(90deg, #ffd180, #ff7043);
-}
+
 
 .contact-info {
     display: grid;
@@ -481,7 +479,7 @@ footer {
     gap: 0.5em;
     font-weight: bold;
     font-family: "Kosugi Maru", sans-serif;
-  font-weight: 400;
+  font-weight: 500;
   font-style: normal;
 }
 
