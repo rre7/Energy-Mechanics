@@ -135,28 +135,14 @@ header h1 {
     letter-spacing: 0.05em;
     font-weight: 700;
     color: #fff; /* グラデーションをやめて白文字に */
-    background: none;
-    -webkit-background-clip: initial;
-    -webkit-text-fill-color: initial;
-    background-clip: initial;
-    position: relative;
+   position: relative;
     z-index: 1;
     text-shadow: 0 0 30px rgba(255, 183, 77, 0.3);
     animation: glow 3s ease-in-out infinite alternate;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
-#hero h2-container {
-  width: 100%;
-  overflow: hidden;
-}
-
-#hero h2 {
-  display: inline-block;
-  white-space: nowrap;
-  transform: scale(1);
-  transform-origin: left;
-}
-
-
 @keyframes glow {
     from { filter: drop-shadow(0 0 20px rgba(255, 183, 77, 0.7)); }
     to { filter: drop-shadow(0 0 30px rgba(255, 112, 67, 0.8)); }
@@ -522,6 +508,8 @@ footer {
 
 .course-images {
     display: flex;
+    width: 180px;
+    height: 180px;
     justify-content: center;
     align-items: center;
     gap: 1.5rem;
