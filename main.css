@@ -739,7 +739,7 @@ html {
         gap: 1rem;
     }
 
-  .course-images img, .course1-images img {
+  .course-images, .course1-images {
         display: flex;
         flex-direction: row; /* 横並びを維持 */
         flex-wrap: nowrap; /* 折り返しなし */
