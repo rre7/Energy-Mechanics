@@ -538,23 +538,7 @@ footer {
     user-select: none;
 }
 
-/* 6の写真だけ中央に配置 */
-.course1-images {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 2rem;
-    margin: 2rem 0;
-}
-.course1-images img {
-    width: 180px;
-    height: 180px;
-    object-fit: cover;
-    border-radius: 14px;
-    box-shadow: 0 4px 16px rgba(255, 183, 77, 0.18);
-    border: 1.5px solid #ffd180;
-    background: #fff8f1;
-}
+
 
 /* よくある質問セクションのデザイン */
 #faq {
