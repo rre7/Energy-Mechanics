@@ -613,7 +613,62 @@ html {
     height: auto;
     min-width: 150px; /* 最小サイズを設定 */
 }
+/* 画像セクションの基本スタイル */
+.course-images, .course1-images {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2vw; /* ビューポート幅に応じた間隔 */
+    margin: 2rem 0;
+    flex-wrap: nowrap;
+    padding: 0 1rem; /* 左右に余白を確保 */
+}
 
+/* 基本的な画像サイズ（レスポンシブ） */
+.course-images img, .course1-images img {
+    width: min(180px, 28vw); /* 最大180px、画面幅の28% */
+    height: min(180px, 28vw); /* 正方形を維持 */
+    max-width: 180px;
+    max-height: 180px;
+    min-width: 60px; /* 最小サイズを保証 */
+    min-height: 60px;
+    object-fit: cover;
+    border-radius: clamp(6px, 2vw, 14px); /* 画面サイズに応じた角丸 */
+    box-shadow: 0 4px 16px rgba(255, 183, 77, 0.18);
+    border: 1.5px solid #ffd180;
+    background: #fff8f1;
+    flex-shrink: 1;
+    transition: all 0.3s ease; /* スムーズなサイズ変更 */
+}
+
+/* 細かい調整用のメディアクエリ */
+
+/* 大画面（1200px以上） */
+@media (min-width: 1200px) {
+    .course-images img, .course1-images img {
+        width: 200px;
+        height: 200px;
+    }
+    
+    .course-images, .course1-images {
+        gap: 2.5rem;
+    }
+}
+
+/* 極小画面（320px以下）での最小保証 */
+@media (max-width: 320px) {
+    .course-images img, .course1-images img {
+        min-width: 70px;
+        min-height: 70px;
+        width: max(70px, 25vw);
+        height: max(70px, 25vw);
+    }
+    
+    .course-images, .course1-images {
+        gap: 1vw;
+        padding: 0 0.5rem;
+    }
+}
 /* 既存のメディアクエリに加えて、段階的な対応を追加 */
 
 /* 大画面（デスクトップ） */
