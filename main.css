@@ -73,7 +73,7 @@ header h1 {
     color: #fff;
     text-shadow: 0 1px 2px rgba(180, 80, 0, 0.15);
     font-weight: 600;
-    padding: 0.8rem 1.5rem;
+    padding: 0.3rem 1rem;
     border-radius: 30px;
     transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     position: relative;
@@ -83,7 +83,7 @@ header h1 {
     font-family: "Mochiy Pop One", sans-serif;
     font-style: normal;
     white-space: nowrap;
-    font-size: clamp(0.8rem, 2.5vw, 1rem);
+    font-size: clamp(0.1rem, 2vw, 1rem);
 }
 
 /* グラデーションや枠を付与している疑似要素を無効化 */
@@ -131,7 +131,8 @@ header h1 {
 }
 
 #hero h2 {
-    font-size: 3rem;
+  font-size: clamp(1rem, 8vw, 3rem);  /* ✅ 画面に応じて自動調整 */
+
     margin-bottom: 1.5rem;
     letter-spacing: 0.05em;
     font-weight: 700;
@@ -507,53 +508,47 @@ footer {
 }
 
 .course-images, .course1-images {
-    display: flex;
-    flex-wrap: nowrap;             /* 折り返しなし */
-    justify-content: flex-start;   /* 横方向に左寄せで並べる */
-    align-items: center;
-    gap: 1rem;
-    margin: 2rem 0;
-    padding: 0 1rem;
-    width: 100%;
-    overflow-x: auto;              /* 横スクロールを有効にする */
-    overflow-y: hidden;
-    -ms-overflow-style: none;      /* IE */
-    scrollbar-width: none;         /* Firefox */
+  display: flex;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  gap: 1rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  scroll-padding-left: 1rem;
+  scroll-padding-right: 1rem;
+  scrollbar-width: thin;
+  scrollbar-color: #ffd180 transparent;
 }
 
-/* スクロールバーを非表示（Chrome系） */
-.course-images::-webkit-scrollbar,
-.course1-images::-webkit-scrollbar {
-    display: none;
+.course-images img,
+.course1-images img {
+  flex-shrink: 0;
+  width: 180px;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 12px;
+  border: 1.5px solid #ffd180;
+  background: #fff8f1;
+  scroll-snap-align: start;
 }
 
-.course-images img, .course1-images img {
-    flex-shrink: 0;
-    width: 28vw;                   /* 画面幅に応じて拡縮 */
-    max-width: 180px;
-    min-width: 100px;
-    height: auto;
-    aspect-ratio: 1 / 1;           /* 正方形を維持 */
-    object-fit: cover;
-    border-radius: clamp(6px, 1.5vw, 14px);
-    box-shadow: 0 4px 16px rgba(255, 183, 77, 0.18);
-    border: 1.5px solid #ffd180;
-    background: #fff8f1;
-    transition: all 0.3s ease;
-}
 
 
 /* 矢印デザイン */
 .course-arrow {
-    font-size: 2.5rem;
-    font-weight: 700;
-    color: #ff7043;
-    margin: 0 0.5rem;
-    vertical-align: middle;
-    user-select: none;
+  display: flex;
+  align-items: center;       /* ✅ 縦方向中央に配置 */
+  justify-content: center;   /* 横方向中央（必要なら） */
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #ff7043;
+  margin: 0 0.5rem;
+  scroll-snap-align: start;
+  height: 180px;             /* ✅ 画像と同じ高さにする */
+  line-height: 180px;        /* ✅ 中央に配置されやすくなる */
 }
-
-
 
 /* よくある質問セクションのデザイン */
 #faq {
@@ -612,7 +607,7 @@ html {
 /* 画像のレスポンシブ対応を追加 */
 img {
     max-width: 100%;
-    height: auto;
+    height: 100%;
     display: block;
     margin: 0 auto; /* 中央寄せ */
 }
