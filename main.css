@@ -506,29 +506,42 @@ footer {
     border: 1px solid #ffd180;
 }
 
-.course-images {
+.course-images, .course1-images {
     display: flex;
-    width: 180px;
-    height: 180px;
-    justify-content: center;
+    flex-wrap: nowrap;             /* 折り返しなし */
+    justify-content: flex-start;   /* 横方向に左寄せで並べる */
     align-items: center;
-    gap: 1.5rem;
+    gap: 1rem;
     margin: 2rem 0;
-    aspect-ratio: 1 / 1; /* 正方形を維持 */
-    overflow: hidden; /* はみ出しを防ぐ */
     padding: 0 1rem;
+    width: 100%;
+    overflow-x: auto;              /* 横スクロールを有効にする */
+    overflow-y: hidden;
+    -ms-overflow-style: none;      /* IE */
+    scrollbar-width: none;         /* Firefox */
 }
-.course-images img {
-    width: 180px;
-    height: 180px;
+
+/* スクロールバーを非表示（Chrome系） */
+.course-images::-webkit-scrollbar,
+.course1-images::-webkit-scrollbar {
+    display: none;
+}
+
+.course-images img, .course1-images img {
+    flex-shrink: 0;
+    width: 28vw;                   /* 画面幅に応じて拡縮 */
+    max-width: 180px;
+    min-width: 100px;
+    height: auto;
+    aspect-ratio: 1 / 1;           /* 正方形を維持 */
     object-fit: cover;
-    border-radius: 12px;
+    border-radius: clamp(6px, 1.5vw, 14px);
     box-shadow: 0 4px 16px rgba(255, 183, 77, 0.18);
     border: 1.5px solid #ffd180;
     background: #fff8f1;
-    aspect-ratio: 1 / 1; /* 正方形を維持 */
     transition: all 0.3s ease;
 }
+
 
 /* 矢印デザイン */
 .course-arrow {
@@ -597,151 +610,12 @@ html {
     scroll-padding-top: 210px; /* ヘッダーの高さ分だけ余白を確保 */
 }
 /* 画像のレスポンシブ対応を追加 */
-.course-images img, .course1-images img {
+img {
     max-width: 100%;
     height: auto;
-    min-width: 150px; /* 最小サイズを設定 */
+    display: block;
+    margin: 0 auto; /* 中央寄せ */
 }
-
-/* 画像セクションの基本スタイル - 修正版 */
-.course-images, .course1-images {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 1rem; /* より小さい固定値に変更 */
-    margin: 2rem 0;
-    flex-wrap: nowrap;
-    padding: 0 1rem;
-    width: 100%;
-    overflow: hidden; 
-    
-    /* はみ出しを防ぐ */
-}
-
-/* 基本的な画像サイズ（レスポンシブ） - 修正版 */
-.course-images img, .course1-images img {
-    width: calc((100vw - 6rem) / 3); /* 3つの画像＋余白を考慮した幅 */
-    height: calc((100vw - 6rem) / 3); /* 正方形を維持 */
-    max-width: 180px;
-    max-height: 180px;
-    min-width: 60px;
-    min-height: 60px;
-    object-fit: cover;
-    border-radius: clamp(6px, 1.5vw, 14px);
-    box-shadow: 0 4px 16px rgba(255, 183, 77, 0.18);
-    border: 1.5px solid #ffd180;
-    background: #fff8f1;
-    flex-shrink: 1;
-    transition: all 0.3s ease;
-    aspect-ratio: 1/1; 
-}
-
-/* 細かい調整用のメディアクエリ */
-
-@media (min-width: 1200px) {
-    .course-images img, .course1-images img {
-        width: 200px;
-        height: 200px;
-    }
-    
-    .course-images, .course1-images {
-        gap: 2.5rem;
-    }
-}
-
-/* タブレット（768px以下） */
-@media (max-width: 768px) {
-    .course-images, .course1-images {
-        gap: 0.8rem;
-        padding: 0 0.5rem;
-    }
-    
-    .course-images img, .course1-images img {
-        width: calc((100vw - 4rem) / 3);
-        height: calc((100vw - 4rem) / 3);
-        max-width: 120px;
-        max-height: 120px;
-        min-width: 80px;
-        min-height: 80px;
-        aspect-ratio: 1 / 1; 
-    }
-}
-
-/* スマートフォン（480px以下） */
-@media (max-width: 480px) {
-    .course-images, .course1-images {
-        gap: 0.5rem;
-        padding: 0 0.5rem;
-        margin: 1.5rem 0;
-    }
-    
-    .course-images img, .course1-images img {
-        width: calc((100vw - 3rem) / 3);
-        height: calc((100vw - 3rem) / 3);
-        max-width: 100px;
-        max-height: 100px;
-        min-width: 70px;
-        min-height: 70px;
-        border-radius: 8px;
-        aspect-ratio: 1 / 1; 
-    }
-    
-    /* 矢印サイズも調整 */
-    .course-arrow {
-        font-size: 1.8rem;
-        margin: 0 0.2rem;
-    }
-}
-
-/* 小さいスマートフォン（360px以下） */
-@media (max-width: 360px) {
-    .course-images, .course1-images {
-        gap: 0.3rem;
-        padding: 0 0.3rem;
-    }
-    
-    .course-images img, .course1-images img {
-        width: calc((100vw - 2.5rem) / 3);
-        height: calc((100vw - 2.5rem) / 3);
-        max-width: 85px;
-        max-height: 85px;
-        min-width: 60px;
-        min-height: 60px;
-        border-radius: 6px;
-        aspect-ratio: 1 / 1; 
-    }
-    
-    .course-arrow {
-        font-size: 1.5rem;
-        margin: 0 0.1rem;
-    }
-}
-
-/* 極小画面（320px以下）での最小保証 */
-@media (max-width: 320px) {
-    .course-images, .course1-images {
-        gap: 0.2rem;
-        padding: 0 0.2rem;
-    }
-    
-    .course-images img, .course1-images img {
-        width: calc((100vw - 2rem) / 3);
-        height: calc((100vw - 2rem) / 3);
-        max-width: 75px;
-        max-height: 75px;
-        min-width: 55px;
-        min-height: 55px;
-        border-radius: 5px;
-        aspect-ratio: 1 / 1;
-    }
-    
-    .course-arrow {
-        font-size: 1.2rem;
-        margin: 0;
-    }
-}
-/* 既存のメディアクエリに加えて、段階的な対応を追加 */
-
 /* 大画面（デスクトップ） */
 @media (min-width: 1400px) {
     main {
