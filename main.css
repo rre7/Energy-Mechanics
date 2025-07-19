@@ -83,6 +83,7 @@ header h1 {
     box-shadow: none;
     font-family: "Mochiy Pop One", sans-serif;
     font-style: normal;
+    white-space: nowrap;
 }
 
 /* グラデーションや枠を付与している疑似要素を無効化 */
@@ -140,9 +141,8 @@ header h1 {
     text-shadow: 0 0 30px rgba(255, 183, 77, 0.3);
     animation: glow 3s ease-in-out infinite alternate;
     white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
 }
+
 @keyframes glow {
     from { filter: drop-shadow(0 0 20px rgba(255, 183, 77, 0.7)); }
     to { filter: drop-shadow(0 0 30px rgba(255, 112, 67, 0.8)); }
@@ -625,6 +625,7 @@ html {
     padding: 0 1rem;
     width: 100%;
     overflow: hidden; 
+    
     /* はみ出しを防ぐ */
 }
 
