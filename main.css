@@ -168,7 +168,7 @@ main {
 }
 
 section {
-    background: rgba(255, 253, 231, 0.95);
+    background: #fff8f1;
     backdrop-filter: blur(15px);
     -webkit-backdrop-filter: blur(15px);
     margin: 3rem 0;
@@ -309,8 +309,9 @@ ul li + p {
 #contact h2 {
     color: rgb(253, 243, 195);
     font-family: "Kosugi Maru", sans-serif;
-  font-weight: 400;
+  font-weight: 600;
   font-style: normal;
+  text-shadow: none;
 }
 
 
@@ -555,7 +556,7 @@ footer {
 /* よくある質問セクションのデザイン */
 #faq {
     background: #fff8f1;
-    border-radius: 18px;
+    border-radius: 25px;
     box-shadow: 0 4px 16px rgba(255, 183, 77, 0.10);
     padding: 2.5rem 1.5rem;
     margin: 3rem 0; /* 左右のautoを0に変更 */
