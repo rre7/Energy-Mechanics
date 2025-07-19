@@ -608,8 +608,11 @@ html {
     scroll-padding-top: 210px; /* ヘッダーの高さ分だけ余白を確保 */
 }
 /* 画像のレスポンシブ対応を追加 */
-
-
+.course-images img, .course1-images img {
+    max-width: 100%;
+    height: auto;
+    min-width: 150px; /* 最小サイズを設定 */
+}
 
 /* 既存のメディアクエリに加えて、段階的な対応を追加 */
 
@@ -728,15 +731,19 @@ html {
     }
 
     .course-images, .course1-images {
-        flex-direction: column;
-        gap: 1rem;
+        flex-direction: row; /* 横並びを維持 */
+        flex-wrap: wrap; /* 必要に応じて折り返し */
+        justify-content: center;
+        gap: 0.8rem;
     }
 
-    .course-images img, .course1-images img {
-        width: 100%;
-        max-width: 280px;
+     .course-images img, .course1-images img {
+        width: calc(33% - 0.5rem); /* 3枚を均等に配置 */
+        min-width: 90px; /* 最小幅を確保 */
+        max-width: 150px;
         height: auto;
-    }
+        aspect-ratio: 3/3; /* 縦横比を固定 */
+        object-fit: cover;
 
     .contact-info {
         grid-template-columns: 1fr;
@@ -807,10 +814,18 @@ html {
     }
     
     .course-images img, .course1-images img {
-        max-width: 100%;
-        width: 100%;
+        width: calc(33% - 0.3rem); /* 最小画面でも3枚並べる */
+        min-width: 70px;
+        max-width: 100px;
+        height: auto;
+        aspect-ratio: 3/3;
+        object-fit: cover;
     }
-    
+        
+    .course-images, .course1-images {
+        gap: 0.4rem; /* さらに間隔を狭める */
+        margin: 1.5rem 0; /* 上下の余白を調整 */
+    }
     ul .li5 {
         padding: 1rem;
         font-size: 1rem;
@@ -844,4 +859,4 @@ html {
     h2 {
         font-size: 1.4rem;
     }
-}
+} 
