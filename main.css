@@ -608,11 +608,8 @@ html {
     scroll-padding-top: 210px; /* ヘッダーの高さ分だけ余白を確保 */
 }
 /* 画像のレスポンシブ対応を追加 */
-.course-images img, .course1-images img {
-    max-width: 100%;
-    height: auto;
-    min-width: 150px; /* 最小サイズを設定 */
-}
+
+
 
 /* 既存のメディアクエリに加えて、段階的な対応を追加 */
 
